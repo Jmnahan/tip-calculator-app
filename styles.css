@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Mono', monospace;
+}
+
+:root {
+  --background: #C5E4E7;
+  --primary: #00494D;
+  --placeholder: #7F9C9F;
+  --outline: #26C0AB;
+  --titleColor: #5E7A7D;
+  --billContainerColor: #fff;
+  --btnTextColor: #F4FAFA;
+  --resetBtnHover: #9ceade;
+  --errorColor: #d37157;
+  --footer: #3d52a3;
+}
+
+::placeholder, .main, span {
+  color: var(--placeholder);
+}
+
+input::-webkit-outer-spin-button,                                              
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input:focus {
+  outline-color: var(--outline);
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input, input::placeholder { 
+  text-align: right;
+}
+
+input {
+  color: var(--primary);
+  caret-color: var(--outline);
+  padding: 0.313rem 0.625rem 0.313rem;
+}
+
+h1 {
+  margin-bottom: 10vh;
+  color: var(--titleColor);
+  font-size: 1.5rem;
+}
+
+button, input {
+  cursor: pointer;
+  display: block;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.container, .bill-container, .list-row, .aside-content, ol {
+  display: flex;
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.bill-container {
+  flex-direction: row;
+  background-color: var(--billContainerColor);
+  padding: 1.563rem;
+  border-radius: 1.5rem;
+}
+
+.main {
+  max-width: 30rem;
+  padding: 1.563rem;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 22rem;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.list-btn, .list-input {  
+  flex: 1 1 25%;
+}
+
+.button-container input {
+  width: 50px;
+}
+
+.list-btn, .list-input, .reset-btn, .dollar-icon, .person-icon {
+  border-radius: 4px;
+}
+
+.list-btn {
+  background-color: var(--primary);
+  color: var(--btnTextColor);
+  padding: 0.35rem;
+}
+
+.list-btn-active {
+  background-color: var(--outline); 
+  color: var(--primary);
+}
+
+.list-btn:hover {
+  background-color: var(--resetBtnHover);
+  color: var(--primary);
+}
+
+.list-input {
+  background-color: var(--btnTextColor);
+}
+
+.list-input::placeholder {
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.dollar-icon {
+  background: url(./images/icon-dollar.svg) no-repeat left 1rem center;
+}
+
+.person-icon {
+  background: url(./images/icon-person.svg) no-repeat left 1rem center;
+}
+
+.error-message {
+  display: none;
+  color: var(--errorColor);
+  margin-left: 25px;
+}
+
+.dollar-icon, .person-icon{ 
+  width: 22rem;
+  border: none;
+  background-color: var(--btnTextColor);
+}
+
+.list-header {
+  margin-top: 2rem;
+  margin-bottom: 1em;
+  font-size: 1rem;
+}
+
+.aside {
+  max-width: 25rem;
+  background-color: var(--primary);
+  padding: 3.125rem;
+  border-radius: 1rem;
+}
+
+.aside-content {
+  flex-direction: row;  
+}
+
+h4 {
+  padding-top: 1rem;
+  width: 10rem;
+  color: var(--btnTextColor);
+}
+
+.tip-amount {
+  font-size: 3rem;
+  color: var(--outline);
+}
+
+.reset-btn {
+  width: 18.75rem;
+  margin-top: 8rem;
+  padding: 0.5rem 0;
+  background-color: var(--outline);
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.reset-btn:hover {
+  background-color: var(--resetBtnHover);
+}
+
+.attribution { 
+  font-size: 0.75rem; 
+  text-align: center; 
+  margin-top: 5vh;
+}
+.attribution a {
+  color: var(--footer); 
+}
+
+@media only screen and (max-width: 991px) { 
+  .main {
+    max-width: 19rem;
+    margin-right: 3.12rem;
+  }
+
+  .bill-container {
+    flex-direction: column;
+  }
+  
+  .list-row {
+    flex-direction: column;
+  }
+
+  .button-container {
+   width: 19rem;
+  }
+
+  .list-btn, .list-input {  
+    flex: 1 1 35%;
+  }
+
+  .dollar-icon, .person-icon{
+    max-width: 19rem;
+  }
+
+  .aside {
+    padding: 26px;
+    margin: 10px
+  }
+
+  h1 {
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+  } 
+
+  h4 {
+    max-width: 8rem;
+    margin-right: auto;
+  }
+
+  .tip-amount {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+  }
+
+  .reset-btn {
+    max-width: 17rem;
+    margin-top: 3rem;
+  }
+}
